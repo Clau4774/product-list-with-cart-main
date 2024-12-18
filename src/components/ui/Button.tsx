@@ -1,4 +1,4 @@
-import { ButtonInterface } from "../interfaces"
+import { ButtonInterface } from "../../interfaces"
 
 
 function Button({children, ...props}: ButtonInterface) {
