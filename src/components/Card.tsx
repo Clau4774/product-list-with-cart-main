@@ -54,11 +54,12 @@ function Card({
         <div className="absolute bottom-12 left-2/4 -translate-x-1/2">
           <ButtonAddToCart {...infoSend} />
         </div>
-        <span>{category}</span>
-        <p>{name}</p>
-        <p>${price.toFixed(2)}</p>
+      </div>
+      <span className="text-gray-400">{category}</span>
+      <p className="font-semibold">{name}</p>
+      <p className="font-semibold text-red-500">${price.toFixed(2)}</p>
     </div>
-  )
+  );
 }
 
-export default Card
+export default Card;
