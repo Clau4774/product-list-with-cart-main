@@ -2,11 +2,11 @@ import React from 'react'
 import ButtonAddToCart from './ui/ButtonAddToCart'
 
 type ImagesContainer = {
-    thumbnail?: string;
-    mobile: string;
-    tablet: string;
-    desktop: string
-    }
+  thumbnail?: string;
+  mobile: string;
+  tablet: string;
+  desktop: string;
+};
 
 function Card({image, name, category, price}: {image: ImagesContainer, name: string, category: string, price: number}) {
 
