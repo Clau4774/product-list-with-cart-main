@@ -1,46 +1,69 @@
 import React from "react";
-import { ButtonAddToCartInterface } from "../../interfaces/index"
-import addCartIcon from '../../assets/images/icon-add-to-cart.svg'
-import incrementItemIcon from '../../assets/images/icon-increment-quantity.svg';
-import decrementItemIcon from '../../assets/images/icon-decrement-quantity.svg';
+import { ButtonAddToCartInterface } from "../../interfaces/index";
+import addCartIcon from "../../assets/images/icon-add-to-cart.svg";
+import incrementItemIcon from "../../assets/images/icon-increment-quantity.svg";
+import decrementItemIcon from "../../assets/images/icon-decrement-quantity.svg";
 
+function ButtonAddToCart({ ...props }: ButtonAddToCartInterface) {
+  const [itemSelected, setItemSelected] = React.useState({
+    name: props.name,
+    price: props.price,
+    thumbnail: props.thumbnail,
+    quantity: 0,
+  });
 
-function ButtonAddToCart( {...props}: ButtonAddToCartInterface) {
+  console.log(itemSelected);
 
-  const [itemSelected, setItemSelected] = React.useState<number>(0);
-    
-    
-    const changeInitialState = ():void => {
-        if(itemSelected === 0) setItemSelected(itemSelected + 1);
-    };
-    
+  const firstProductAdd = (): void => {
+    if (itemSelected.quantity === 0) {
+      addProduct();
+    }
+  };
 
-    return (
-        <>
-        <button onClick={changeInitialState} className={`${itemSelected === 0 ? 'bg-white' : 'bg-red-500'} w-48 px-6 outline-none  py-3 border-2 rounded-full hover:text-red-600 transition-all select-none`} {...props}>
-            {
-            itemSelected === 0 
-            ? 
-            <div className="flex justify-center gap-4">
-                <img src={addCartIcon} alt="Cart icon"/>
-                <span>Add to Cart</span>
+  const addProduct = (): void => {
+    setItemSelected({ ...itemSelected, quantity: itemSelected.quantity + 1 });
+  };
+
+  const removeProduct = (): void => {
+    setItemSelected({ ...itemSelected, quantity: itemSelected.quantity - 1 });
+  };
+
+  return (
+    <>
+      <button
+        onClick={firstProductAdd}
+        className={`${
+          itemSelected.quantity === 0
+            ? "bg-white border border-gray-500"
+            : "bg-red-500 border-red-500"
+        } w-48 px-6 outline-none  py-3 rounded-full hover:text-red-600 transition-all select-none font-semibold`}
+        {...props}
+      >
+        {itemSelected.quantity === 0 ? (
+          <div className="flex justify-center gap-4">
+            <img src={addCartIcon} alt="Cart icon" />
+            <span>Add to Cart</span>
+          </div>
+        ) : (
+          <div className="flex justify-between gap-8 text-white">
+            <div
+              onClick={removeProduct}
+              className="flex rounded-full border-2 p-1 hover:text-red-500 hover:bg-white "
+            >
+              <img src={decrementItemIcon} alt="Decrement icon" />
             </div>
-            :
-            <div className="flex justify-between gap-8 text-white">
-                <div onClick={() => setItemSelected(itemSelected - 1)} className="flex rounded-full border-2 p-1 hover:text-red-500 hover:bg-white " >
-                    <img src={decrementItemIcon} alt="Decrement icon"/>
-                </div>
-                <span>{itemSelected}</span>
-                <div onClick={() => setItemSelected(itemSelected + 1)} className="flex rounded-full border-2 p-1 hover:text-red-500 hover:bg-white ">
-                    <img src={incrementItemIcon} alt="Increment icon"/> 
-                </div>
+            <span>{itemSelected.quantity}</span>
+            <div
+              onClick={addProduct}
+              className="flex rounded-full border-2 p-1 hover:text-red-500 hover:bg-white "
+            >
+              <img src={incrementItemIcon} alt="Increment icon" />
             </div>
-            }
-                
-        </button>
-        
-        </>
-    )
+          </div>
+        )}
+      </button>
+    </>
+  );
 }
 
-export default ButtonAddToCart
+export default ButtonAddToCart;
