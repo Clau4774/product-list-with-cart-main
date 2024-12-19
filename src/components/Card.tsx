@@ -44,10 +44,15 @@ function Card({
   };
 
   return (
-    <div className="">
-        <div>
-            <img src={mobile} alt={`The image of a ${name}`}/>
-            <ButtonAddToCart/>
+    <div className="max-w-80 relative mx-auto">
+      <div>
+        <img
+          className="rounded-md"
+          src={checkScreenSize()}
+          alt={`The image of a ${name}`}
+        />
+        <div className="absolute bottom-12 left-2/4 -translate-x-1/2">
+          <ButtonAddToCart {...infoSend} />
         </div>
         <span>{category}</span>
         <p>{name}</p>
