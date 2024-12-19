@@ -1,5 +1,5 @@
-import React from 'react'
-import ButtonAddToCart from './ui/ButtonAddToCart'
+import React from "react";
+import ButtonAddToCart from "./ui/ButtonAddToCart";
 
 type ImagesContainer = {
   thumbnail?: string;
