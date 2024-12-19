@@ -51,13 +51,15 @@ function Card({
           src={checkScreenSize()}
           alt={`The image of a ${name}`}
         />
-        <div className="absolute bottom-12 left-2/4 -translate-x-1/2">
+        <div className="absolute bottom-24 left-2/4 -translate-x-1/2">
           <ButtonAddToCart {...infoSend} />
         </div>
       </div>
-      <span className="text-gray-400">{category}</span>
-      <p className="font-semibold">{name}</p>
-      <p className="font-semibold text-red-500">${price.toFixed(2)}</p>
+      <div className="flex flex-col gap-1 mt-10">
+        <span className="text-gray-400">{category}</span>
+        <p className="font-semibold">{name}</p>
+        <p className="font-semibold text-red-500">${price.toFixed(2)}</p>
+      </div>
     </div>
   );
 }
