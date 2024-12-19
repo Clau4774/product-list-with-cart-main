@@ -29,9 +29,19 @@ function Card({
 
   const checkScreenSize = (): string => {
     const screenWidth = window.innerWidth;
-    
 
-    const { mobile, tablet, desktop} = image;
+    console.log("screenWidth", screenWidth);
+
+    if (screenWidth < 768) {
+      return mobile;
+    }
+
+    if (screenWidth >= 768 && screenWidth < 1024) {
+      return tablet;
+    }
+
+    return desktop;
+  };
 
   return (
     <div className="">
