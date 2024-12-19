@@ -8,8 +8,26 @@ type ImagesContainer = {
   desktop: string;
 };
 
-function Card({image, name, category, price}: {image: ImagesContainer, name: string, category: string, price: number}) {
+function Card({
+  image,
+  name,
+  category,
+  price,
+}: {
+  image: ImagesContainer;
+  name: string;
+  category: string;
+  price: number;
+}) {
+  const { mobile, tablet, desktop, thumbnail } = image;
 
+  const infoSend = {
+    name,
+    price,
+    thumbnail,
+  };
+
+  const checkScreenSize = (): string => {
     const screenWidth = window.innerWidth;
     
 
