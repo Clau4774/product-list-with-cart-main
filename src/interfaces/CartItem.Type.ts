@@ -1,6 +1,6 @@
 export type CartItemType = {
-  itemName: string;
-  itemPrice: number;
+  id: number;
+  name: string;
+  price: number;
   quantity: number;
-  setCart: () => void;
 };
