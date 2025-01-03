@@ -5,15 +5,6 @@ import Cart from "./components/cart/Cart";
 import { CartItemType } from "./interfaces";
 
 function App() {
-  const item = {
-    name: data[0].name,
-    price: data[0].price,
-    quantity: 1,
-  };
-
-  const [cart, setCart] = React.useState([]);
-
-  setCart([...cart, item]);
   return (
     <div>
       <Cart cart={cart} setCart={setCart} />
