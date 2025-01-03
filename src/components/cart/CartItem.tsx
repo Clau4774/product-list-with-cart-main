@@ -3,8 +3,8 @@ import { CartItemType } from "../../interfaces";
 import closeButton from "../../assets/images/icon-remove-item.svg";
 import { AppContext } from "../../context/AppContext";
 
-function CartItem({ itemName, itemPrice, quantity, setCart }: CartItemType) {
-  const totalPrice = itemPrice * quantity;
+function CartItem({ name, price, quantity }: CartItemType) {
+  const totalPrice = price * quantity;
 
   const RemoveItem = () => {
     setCart((prev: any) => {
