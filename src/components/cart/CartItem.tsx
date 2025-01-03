@@ -6,11 +6,7 @@ import { AppContext } from "../../context/AppContext";
 function CartItem({ name, price, quantity }: CartItemType) {
   const totalPrice = price * quantity;
 
-  const RemoveItem = () => {
-    setCart((prev: any) => {
-      return prev.filter((item: any) => item.itemName !== itemName);
-    });
-  };
+  const { removeElement } = React.useContext(AppContext);
 
   return (
     <div>
