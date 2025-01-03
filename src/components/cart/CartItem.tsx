@@ -19,7 +19,7 @@ function CartItem({ name, price, quantity }: CartItemType) {
         </div>
       </div>
       <div>
-        <button>
+        <button onClick={() => removeElement(name)}>
           <img src={closeButton} alt="CloseButton" />
         </button>
       </div>
