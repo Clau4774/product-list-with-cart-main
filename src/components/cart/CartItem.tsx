@@ -1,6 +1,7 @@
 import React from "react";
 import { CartItemType } from "../../interfaces";
 import closeButton from "../../assets/images/icon-remove-item.svg";
+import { AppContext } from "../../context/AppContext";
 
 function CartItem({ itemName, itemPrice, quantity, setCart }: CartItemType) {
   const totalPrice = itemPrice * quantity;
