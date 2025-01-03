@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import data from "./data/data.json";
 import Cart from "./components/cart/Cart";
 import { CartItemType } from "./interfaces";
 
