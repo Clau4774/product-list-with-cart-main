@@ -16,16 +16,28 @@ function Cart() {
   };
 
   return (
-    <div>
-      {cart.map((item: CartItemType, index: number) => (
-        <CartItem
-          setCart={setCart}
-          key={index}
-          itemName={item.name}
-          itemPrice={item.price}
-          quantity={item.quantity}
-        />
-      ))}
+    <div className="p-4 bg-white rounded-sm">
+      <h3 className="text-red-600 text-xl font-bold ">
+        Your Cart({cart.length})
+      </h3>
+      <button
+        onClick={() => {
+          setIndex(index + 1);
+          return addElement(item);
+        }}
+      >
+        add Element
+      </button>
+      <div className="flex flex-col gap-4">
+        {cart.map((item: CartItemType, index: number) => (
+          <CartItem
+            key={index}
+            name={item.name}
+            price={item.price}
+            quantity={item.quantity}
+          />
+        ))}
+      </div>
     </div>
   );
 }
