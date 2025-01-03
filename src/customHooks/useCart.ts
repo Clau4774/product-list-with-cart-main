@@ -15,7 +15,7 @@ const useCart = () => {
   const addQuantity = (cartElement: CartItemType): void => {
     setCart((prevCart) =>
       prevCart.map((item) =>
-        item.id === cartElement.id
+        item.name === cartElement.name
           ? { ...item, quantity: item.quantity++ }
           : item
       )
@@ -25,7 +25,7 @@ const useCart = () => {
   const reduceQuantity = (cartElement: CartItemType): void => {
     setCart((prevCart) =>
       prevCart.map((item) =>
-        item.id === cartElement.id
+        item.name === cartElement.name
           ? { ...item, quantity: item.quantity-- }
           : item
       )
