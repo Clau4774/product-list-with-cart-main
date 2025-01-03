@@ -11,10 +11,10 @@ function CartItem({ name, price, quantity }: CartItemType) {
   return (
     <div>
       <div>
-        <h3>{itemName}</h3>
+        <h3>{name}</h3>
         <div>
           <p>
-            {quantity}x <span>{itemPrice}</span> <span>{totalPrice}</span>
+            {quantity}x <span>{price}</span> <span>{totalPrice}</span>
           </p>
         </div>
       </div>
