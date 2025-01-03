@@ -8,6 +8,10 @@ const useCart = () => {
     setCart((prevCart) => [...prevCart, cartElement]);
   };
 
+  const removeElement = (elemntName: string): void => {
+    setCart((prevCart) => prevCart.filter((item) => item.name !== elemntName));
+  };
+
   const addQuantity = (cartElement: CartItemType): void => {
     setCart((prevCart) =>
       prevCart.map((item) =>
@@ -15,14 +19,6 @@ const useCart = () => {
           ? { ...item, quantity: item.quantity++ }
           : item
       )
-    );
-  };
-
-  const removeElement = (cartElement: CartItemType): void => {
-    console.log("Llama al hook");
-    console.log(cartElement);
-    setCart((prevCart) =>
-      prevCart.filter((item) => item.id !== cartElement.id)
     );
   };
 
