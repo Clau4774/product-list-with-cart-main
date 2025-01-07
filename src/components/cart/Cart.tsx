@@ -29,14 +29,21 @@ function Cart() {
         add Element
       </button>
       <div className="flex flex-col gap-4">
-        {cart.map((item: CartItemType, index: number) => (
-          <CartItem
-            key={index}
-            name={item.name}
-            price={item.price}
-            quantity={item.quantity}
-          />
-        ))}
+        {cart.length > 0 ? (
+          cart.map((item: CartItemType, index: number) => (
+            <CartItem
+              key={index}
+              name={item.name}
+              price={item.price}
+              quantity={item.quantity}
+            />
+          ))
+        ) : (
+          <p>Your Cart is Empty</p>
+        )}
+      </div>
+      <div>
+        <span>Order Total</span> <span>${totalCart.toFixed(2)}</span>
       </div>
     </div>
   );
