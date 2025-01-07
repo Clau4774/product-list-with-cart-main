@@ -4,7 +4,7 @@ import CartItem from "./CartItem";
 import { AppContext } from "../../context/AppContext";
 
 function Cart() {
-  const { data, addElement, cart } = React.useContext(AppContext);
+  const { data, addElement, totalCart, cart } = React.useContext(AppContext);
 
   const [index, setIndex] = React.useState(0);
 
