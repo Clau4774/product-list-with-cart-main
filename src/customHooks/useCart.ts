@@ -20,7 +20,7 @@ const useCart = () => {
     setCart((prevCart) =>
       prevCart.map((item) =>
         item.name === cartElement.name
-          ? { ...item, quantity: item.quantity++ }
+          ? { ...item, quantity: item.quantity + 1 }
           : item
       )
     );
@@ -30,7 +30,7 @@ const useCart = () => {
     setCart((prevCart) =>
       prevCart.map((item) =>
         item.name === cartElement.name
-          ? { ...item, quantity: item.quantity-- }
+          ? { ...item, quantity: item.quantity - 1 }
           : item
       )
     );
