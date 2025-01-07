@@ -4,6 +4,10 @@ import { CartItemType } from "../interfaces";
 const useCart = () => {
   const [cart, setCart] = useState<CartItemType[]>([]);
 
+  const [totalCart, setTotalCart] = useState<number>(0);
+
+  useEffect(() => calculateTotal(), [cart]);
+
   const addElement = (cartElement: CartItemType): void => {
     setCart((prevCart) => [...prevCart, cartElement]);
   };
