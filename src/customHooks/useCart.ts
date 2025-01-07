@@ -49,6 +49,7 @@ const useCart = () => {
     addQuantity,
     removeElement,
     reduceQuantity,
+    totalCart,
     cart,
     setCart,
   };
