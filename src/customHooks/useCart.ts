@@ -36,6 +36,14 @@ const useCart = () => {
     );
   };
 
+  const calculateTotal = (): void => {
+    const totalCart = cart.reduce(
+      (acc, item) => acc + item.price * item.quantity,
+      0
+    );
+    setTotalCart(totalCart);
+  };
+
   return {
     addElement,
     addQuantity,
