@@ -3,8 +3,14 @@ import useCart from "../customHooks/useCart";
 import data from "../data/data.json";
 
 const ContextProvider = ({ children }) => {
-  const { cart, addElement, removeElement, addQuantity, reduceQuantity } =
-    useCart();
+  const {
+    cart,
+    addElement,
+    removeElement,
+    addQuantity,
+    reduceQuantity,
+    totalCart,
+  } = useCart();
 
   return (
     <AppContext.Provider
@@ -14,6 +20,7 @@ const ContextProvider = ({ children }) => {
         removeElement,
         addQuantity,
         reduceQuantity,
+        totalCart,
         data,
       }}
     >
