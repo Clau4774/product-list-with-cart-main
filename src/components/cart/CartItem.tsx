@@ -9,12 +9,16 @@ function CartItem({ name, price, quantity }: CartItemType) {
   const { removeElement } = React.useContext(AppContext);
 
   return (
-    <div>
+    <div className="flex justify-between items-center text-sm">
       <div>
-        <h3>{name}</h3>
+        <h3 className="font-semibold">{name}</h3>
         <div>
           <p>
-            {quantity}x <span>{price}</span> <span>{totalPrice}</span>
+            <span className="text-red-700 font-semibold">{quantity}x</span>
+            <span className="text-gray-400">@{price.toFixed(2)}</span>{" "}
+            <span className="text-gray-400 font-semibold">
+              ${totalPrice.toFixed(2)}
+            </span>
           </p>
         </div>
       </div>
