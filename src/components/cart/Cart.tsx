@@ -16,8 +16,8 @@ function Cart() {
   };
 
   return (
-    <div className="p-4 bg-white rounded-sm">
-      <h3 className="text-red-600 text-xl font-bold ">
+    <div className="p-4 bg-white rounded-sm max-w-96">
+      <h3 className="text-red-600 font-bold text-2xl">
         Your Cart({cart.length})
       </h3>
       <button
